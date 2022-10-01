@@ -1,24 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  Button,
+  Button_List,
+  Button_Container,
+} from './FeedbackOptions.styled';
 
-export function FeedbackOptions({ options, onLeaveFeedback }) {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <div>
-      <ul>
+      <Button_Container>
         {options.map(option => {
           return (
-            <li key={option}>
-              <button
+            <Button_List key={option}>
+              <Button
                 type="button"
                 onClick={() => {
                   onLeaveFeedback(option);
                 }}
               >
                 {option}
-              </button>
-            </li>
+              </Button>
+            </Button_List>
           );
         })}
-      </ul>
+      </Button_Container>
     </div>
   );
-}
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string.isRequired),
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
