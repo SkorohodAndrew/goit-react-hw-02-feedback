@@ -10,5 +10,5 @@ export const Container = styled.div`
   padding: 50px;
   border-radius: 5%;
   outline: 1px solid #610fa5;
-  background-color: rgb(230, 164, 191);
+  background-color: red;
 `;
